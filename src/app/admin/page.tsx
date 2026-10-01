@@ -138,7 +138,7 @@ export default function AdminPage() {
               onClick={() => setShowNew(true)}
               className="w-full py-3 rounded-xl border-2 border-dashed border-gold-500/30 text-gold-300 text-[14px] font-bold hover:border-gold-500/60 hover:bg-panel/40 transition-all"
             >
-              + Nova Sessão de Leilão
+              + Nova Sessão de Rifa
             </button>
           ) : (
             <form
@@ -153,7 +153,7 @@ export default function AdminPage() {
                   type="text"
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
-                  placeholder="Ex: Leilão 20/08 - Noite"
+                  placeholder="Ex: Rifa 20/08 - Noite"
                   className="flex-1 bg-deep border border-white/[0.08] rounded-lg px-3 py-2.5 text-[14px] text-cream placeholder-[#6a9078] outline-none focus:border-gold/50"
                   autoFocus
                 />
@@ -218,13 +218,13 @@ export default function AdminPage() {
 
                 <div className="flex gap-2">
                   <Link
-                    href={`/admin/leilao/${s.id}`}
+                    href={`/admin/rifa/${s.id}`}
                     className="flex-1 text-center py-2 bg-white/[0.06] hover:bg-white/[0.1] rounded-lg text-[13px] text-cream transition-colors"
                   >
                     Configurar
                   </Link>
                   <Link
-                    href={`/leilao/${s.id}`}
+                    href={`/rifa/${s.id}`}
                     className="flex-1 text-center py-2 bg-white/[0.06] hover:bg-white/[0.1] rounded-lg text-[13px] text-cream transition-colors"
                   >
                     Chat

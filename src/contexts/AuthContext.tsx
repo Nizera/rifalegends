@@ -66,7 +66,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   async function signIn(telefone: string, senha: string) {
     const cleanTel = telefone.replace(/\D/g, "");
-    const email = `legends-${cleanTel}@app.leilaolegends.com`;
+    const email = `legends-${cleanTel}@app.rifalegends.com`;
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password: senha,
@@ -83,7 +83,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     email?: string;
   }) {
     const cleanTel = data.telefone.replace(/\D/g, "");
-    const authEmail = data.email || `legends-${cleanTel}@app.leilaolegends.com`;
+    const authEmail = data.email || `legends-${cleanTel}@app.rifalegends.com`;
 
     const { error: authError } = await supabase.auth.signUp({
       email: authEmail,

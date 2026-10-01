@@ -35,7 +35,7 @@ interface Session {
   status: string;
 }
 
-export default function LeilaoChatPage({
+export default function RifaChatPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -480,7 +480,7 @@ export default function LeilaoChatPage({
           {messages.length === 0 && (
             <div className="text-center py-10">
               <p className="text-[#7d9c88] text-[14px]">
-                Aguardando início do leilão...
+                Aguardando início da rifa...
               </p>
             </div>
           )}
@@ -549,7 +549,7 @@ export default function LeilaoChatPage({
             placeholder={
               activeLot?.status === "ao_vivo"
                 ? "Digite seu lance (ex: 80) ou mensagem..."
-                : "Aguardando leilão..."
+                : "Aguardando rifa..."
             }
             disabled={activeLot?.status !== "ao_vivo" || sending}
             className="flex-1 bg-deep border border-white/[0.08] rounded-xl px-4 py-3 text-[14px] text-cream placeholder-[#6a9078] outline-none focus:border-gold/50 disabled:opacity-50 transition-colors"

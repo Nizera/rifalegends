@@ -2,7 +2,7 @@
 
 import { Suspense } from "react";
 import { trackWhatsAppClick } from "@/components/FacebookPixel";
-import VideoPlayer from "@/components/VideoPlayer";
+import PrizeCarousel from "@/components/PrizeCarousel";
 import Chatbot from "@/components/Chatbot";
 
 function PageContent() {
@@ -26,21 +26,18 @@ function PageContent() {
 
         {/* Hero */}
         <h1 className="font-anton text-[36px] sm:text-[42px] leading-[1.02] text-center uppercase text-cream mb-2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          Como funciona o<br />
+          Como funciona a<br />
           <span className="text-gold-300 drop-shadow-[0_0_20px_rgba(246,217,118,0.3)]">
-            Leilão <span className="font-fifa">Legends</span>
+            Rifa <span className="font-fifa">Legends</span>
           </span>
-          <br />
-          <span className="text-[28px] sm:text-[32px]">da Copa</span>
         </h1>
         <p className="text-center text-[14px] text-[#bcd6c5] max-w-[340px] mx-auto mb-7 font-medium leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-          1 minuto de vídeo pra você entender os lances, o pagamento e o envio
-          antes de participar.
+          Veja os prêmios da Rifa Legends e participe.
         </p>
 
-        {/* Video */}
+        {/* Prêmios */}
         <div className="mb-5 animate-scale-in" style={{ animationDelay: "0.4s" }}>
-          <VideoPlayer />
+          <PrizeCarousel />
         </div>
 
         {/* CTA pós-vídeo */}
@@ -75,9 +72,9 @@ function PageContent() {
         {/* Steps */}
         <div className="flex flex-col gap-3 mb-8">
           {[
-            { num: 1, title: "Os lances acontecem ao vivo no grupo", desc: "Cada figurinha tem lance inicial e horário de início/fim. Se alguém dá lance no último minuto, o tempo estende 3min.", icon: "⚡" },
-            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Quem arrematou paga via Pix e envia o comprovante ao suporte.", icon: "💸" },
-            { num: 3, title: "Envio combinado após confirmação", desc: "Com o pagamento confirmado, o envio é combinado até a entrega ser concluída.", icon: "📦" },
+            { num: 1, title: "Escolha seu número", desc: "Escolha o número da sorte e reserve o seu.", icon: "⚡" },
+            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Após reservar, pague via Pix e envie o comprovante ao suporte.", icon: "💸" },
+            { num: 3, title: "Sorteio ao vivo", desc: "Acompanhe o sorteio ao vivo e boa sorte!", icon: "🎁" },
           ].map((step, i) => (
             <div
               key={step.num}
@@ -162,13 +159,13 @@ function PageContent() {
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-white/[0.06] text-center animate-fade-in" style={{ animationDelay: "1s" }}>
           <p className="text-[11px] text-[#7d9c88] leading-[1.6] px-4">
-            Leilão informal entre colecionadores.
+            Rifa informal entre amigos.
             <br />
-            Nunca faça pagamento antes de confirmar o arremate no grupo.
+            Nunca faça pagamento antes de confirmar a reserva no grupo.
           </p>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
-            <span className="text-[10px] text-[#7d9c88] tracking-wider uppercase">Leilão <span className="font-fifa">Legends</span> © 2026</span>
+            <span className="text-[10px] text-[#7d9c88] tracking-wider uppercase">Rifa <span className="font-fifa">Legends</span> © 2026</span>
             <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />
           </div>
         </div>

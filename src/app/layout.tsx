@@ -6,19 +6,19 @@ import "./globals.css";
 const PIXEL_ID = "1074294225103386";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://leilaolegends.online"),
-  title: "Leilão Legends da Copa — Antes de entrar, assista",
+  metadataBase: new URL("https://rifalegends.online"),
+  title: "Rifa Legends — Veja os Prêmios",
   description:
-    "1 minuto de vídeo pra você entender os lances, o pagamento e o envio antes de participar do Leilão Legends.",
+    "Veja os prêmios da Rifa Legends.",
   openGraph: {
-    title: "Leilão Legends da Copa",
-    description: "Entenda como funciona o Leilão Legends antes de participar.",
+    title: "Rifa Legends",
+    description: "Veja os prêmios da Rifa Legends.",
     images: [
       {
         url: "/seo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Leilão Legends da Copa",
+        alt: "Rifa Legends",
       },
     ],
     type: "website",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leilão Legends da Copa",
-    description: "Entenda como funciona o Leilão Legends antes de participar.",
+    title: "Rifa Legends",
+    description: "Veja os prêmios da Rifa Legends.",
     images: ["/seo.jpeg"],
   },
 };

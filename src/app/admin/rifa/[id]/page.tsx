@@ -26,7 +26,7 @@ interface Session {
   data: string;
 }
 
-export default function AdminLeilaoPage({
+export default function AdminRifaPage({
   params,
 }: {
   params: Promise<{ id: string }>;

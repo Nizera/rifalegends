@@ -17,12 +17,10 @@ export default function PrizeCarousel() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const autoPlayTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Trigger the transition: slide the top card down and move it to the back
   const nextSlide = () => {
     if (isSliding) return;
     setIsSliding(true);
 
-    // After animation finishes (500ms), rotate the order array
     setTimeout(() => {
       setOrder((prev) => {
         const [first, ...rest] = prev;
@@ -33,7 +31,6 @@ export default function PrizeCarousel() {
     }, 500);
   };
 
-  // Reset autoplay timer
   const resetAutoplay = () => {
     if (autoPlayTimer.current) {
       clearInterval(autoPlayTimer.current);
@@ -43,7 +40,6 @@ export default function PrizeCarousel() {
     }, 3000);
   };
 
-  // Setup autoplay
   useEffect(() => {
     resetAutoplay();
     return () => {
@@ -53,7 +49,6 @@ export default function PrizeCarousel() {
     };
   }, [isSliding, order]);
 
-  // Touch and Mouse handlers for dragging/swiping
   const handleStart = (clientX: number, clientY: number) => {
     if (isSliding) return;
     setDragStart({ x: clientX, y: clientY });
@@ -63,7 +58,6 @@ export default function PrizeCarousel() {
     if (!dragStart) return;
     const offsetX = clientX - dragStart.x;
     const offsetY = clientY - dragStart.y;
-    // Allow dragging downwards or sideways
     setDragOffset({ x: offsetX, y: offsetY });
   };
 
@@ -72,10 +66,8 @@ export default function PrizeCarousel() {
     const distance = Math.sqrt(dragOffset.x ** 2 + dragOffset.y ** 2);
 
     if (distance > 80) {
-      // Trigger slide down to back
       nextSlide();
     } else {
-      // Bounce back to center
       setDragOffset({ x: 0, y: 0 });
     }
     setDragStart(null);
@@ -83,8 +75,11 @@ export default function PrizeCarousel() {
 
   return (
     <div className="relative w-full aspect-[4/3] flex items-center justify-center overflow-visible py-8 select-none">
+      {/* Background Ultimate Team Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-radial from-gold-500/20 via-transparent to-transparent rounded-full filter blur-2xl animate-pulse pointer-events-none" />
+
       <div 
-        className="relative w-[75%] h-[90%] touch-none cursor-grab active:cursor-grabbing"
+        className="relative w-[75%] h-[90%] touch-none cursor-grab active:cursor-grabbing animate-glow rounded-2xl"
         onTouchStart={(e) => handleStart(e.touches[0].clientX, e.touches[0].clientY)}
         onTouchMove={(e) => handleMove(e.touches[0].clientX, e.touches[0].clientY)}
         onTouchEnd={handleEnd}
@@ -99,24 +94,18 @@ export default function PrizeCarousel() {
           const isTopCard = stackPosition === 0;
           const image = images[imageIdx];
 
-          // Determine visual hierarchy & layout styling based on stack position (0 is front, 4 is back)
           let transformStyle = "";
           let opacity = 1;
           let zIndex = 10 - stackPosition;
 
           if (isTopCard) {
             if (isSliding) {
-              // Sliding away state (rolls down / out of view)
               transformStyle = "translateY(120%) rotate(15deg) scale(0.95)";
               opacity = 0;
             } else {
-              // Active top card translation (includes user drag offset)
               transformStyle = `translate(${dragOffset.x}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05}deg) scale(1)`;
             }
           } else {
-            // Cards stacked behind with alternating fan effect
-            // stackPosition 1, 2, 3, 4
-            const offsetMultiplier = stackPosition;
             const direction = stackPosition % 2 === 0 ? 1 : -1;
             const rotation = direction * (stackPosition * 3.5);
             const yOffset = -stackPosition * 12;
@@ -129,12 +118,12 @@ export default function PrizeCarousel() {
           return (
             <div
               key={imageIdx}
-              className={`absolute inset-0 shadow-2xl rounded-2xl border-2 border-gold-300/40 overflow-hidden bg-deep transition-all duration-300 ease-out`}
+              className={`absolute inset-0 shadow-2xl rounded-2xl border-2 border-gold-300/60 overflow-hidden bg-deep transition-all duration-300 ease-out`}
               style={{
                 transform: transformStyle,
                 zIndex: zIndex,
                 opacity: opacity,
-                transition: dragStart && isTopCard ? "none" : undefined, // No transition lag while dragging
+                transition: dragStart && isTopCard ? "none" : undefined,
               }}
             >
               <img
@@ -142,7 +131,6 @@ export default function PrizeCarousel() {
                 alt={image.alt}
                 className="w-full h-full object-cover pointer-events-none"
               />
-              {/* Highlight Overlay on top card */}
               {isTopCard && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               )}

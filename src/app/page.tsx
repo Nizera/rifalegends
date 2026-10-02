@@ -48,7 +48,7 @@ function PageContent() {
         {/* CTA 1 */}
         <div className="mb-8 text-center animate-fade-up" style={{ animationDelay: "0.5s" }}>
           <a
-            href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+            href="https://chat.whatsapp.com/GCLtMe9ZRXn6jxKSzMHB4J"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}
@@ -133,7 +133,7 @@ function PageContent() {
         {/* CTA 2 */}
         <div className="text-center animate-fade-up" style={{ animationDelay: "0.95s" }}>
           <a
-            href="https://chat.whatsapp.com/EYD5CmJ0Oer4aeM0zQ9mqu"
+            href="https://chat.whatsapp.com/GCLtMe9ZRXn6jxKSzMHB4J"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleCTAClick}

@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Como sei se ganhei a rifa?",
-    a: "O sorteio é realizado de forma automatizada e transparente. Além disso, transmitimos tudo ao vivo no nosso grupo oficial do WhatsApp e os ganhadores são notificados imediatamente.",
+    a: "O sorteio é realizado com base na Loteria Federal de forma 100% transparente. Além disso, transmitimos tudo no nosso grupo oficial do WhatsApp e os ganhadores são notificados imediatamente.",
   },
   {
     q: "Como funciona o pagamento?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Como recebo o meu prêmio?",
-    a: "Após a confirmação do sorteio, nossa equipe entrará em contato diretamente com o ganhador para combinar o envio seguro do prêmio para qualquer lugar do Brasil com frete por nossa conta.",
+    a: "Após a confirmação do sorteio, nossa equipe entrará em contato diretamente com o ganhador para combinar o envio seguro do prêmio para todo o Brasil (frete por conta do ganhador).",
   },
   {
     q: "O grupo Legends é confiável?",

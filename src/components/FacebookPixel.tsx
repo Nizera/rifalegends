@@ -1,28 +1,29 @@
 "use client";
 
 import { useEffect } from "react";
+import Script from "next/script";
 
 declare global {
   interface Window {
     fbq: (...args: unknown[]) => void;
+    _fbq: unknown;
   }
 }
 
 export function FacebookPixel({ pixelId }: { pixelId: string }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    // Initialize pixel
-    const f = window.fbq;
-    if (f) {
-      f("init", pixelId);
-      f("track", "PageView");
+    if (window.fbq) {
+      window.fbq("init", pixelId);
+      window.fbq("track", "PageView");
     }
   }, [pixelId]);
 
   return (
     <>
-      <script
+      <Script
+        id="meta-pixel"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -33,6 +34,8 @@ export function FacebookPixel({ pixelId }: { pixelId: string }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${pixelId}');
+            fbq('track', 'PageView');
           `,
         }}
       />

@@ -73,7 +73,7 @@ function PageContent() {
         <div className="flex flex-col gap-3 mb-8">
           {[
             { num: 1, title: "Escolha seu número", desc: "Escolha o número da sorte e reserve o seu.", icon: "⚡" },
-            { num: 2, title: "Pagamento é só via Pix, com comprovante", desc: "Após reservar, pague via Pix e envie o comprovante ao suporte.", icon: "💸" },
+            { num: 2, title: "Pagamento 100% Automático", desc: "Integração direta com o Mercado Pago através da plataforma rifa.digital para baixa automática e segura.", icon: "💸" },
             { num: 3, title: "Sorteio ao vivo", desc: "Acompanhe o sorteio ao vivo e boa sorte!", icon: "🎁" },
           ].map((step, i) => (
             <div
@@ -95,45 +95,6 @@ function PageContent() {
           ))}
         </div>
 
-        {/* Feedbacks */}
-        <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.9s" }}>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gold-500/30" />
-            <span className="text-[11px] tracking-[0.15em] uppercase text-gold-300 font-bold">
-              Feedbacks do grupo
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold-500/30" />
-          </div>
-          <div className="overflow-hidden rounded-xl border border-white/[0.06]">
-            <div className="flex gap-3 w-max animate-marquee">
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={`a-${num}`}
-                  className="flex-none w-[280px] rounded-xl overflow-hidden"
-                >
-                  <img
-                    src={`/feedback_0${num}_final.png`}
-                    alt={`Feedback ${num}`}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              ))}
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={`b-${num}`}
-                  className="flex-none w-[280px] rounded-xl overflow-hidden"
-                >
-                  <img
-                    src={`/feedback_0${num}_final.png`}
-                    alt={`Feedback ${num}`}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* CTA */}
         <div className="text-center animate-fade-up" style={{ animationDelay: "0.9s" }}>
           <a
@@ -152,16 +113,16 @@ function PageContent() {
               Grupo gratuito
             </span>
             <span>·</span>
-            <span>Qualquer pessoa pode dar lance</span>
+            <span>Sorteios automatizados</span>
           </div>
         </div>
 
         {/* Footer */}
         <div className="mt-8 pt-6 border-t border-white/[0.06] text-center animate-fade-in" style={{ animationDelay: "1s" }}>
           <p className="text-[11px] text-[#7d9c88] leading-[1.6] px-4">
-            Rifa informal entre amigos.
+            Rifa informal entre amigos gerenciada via rifa.digital.
             <br />
-            Nunca faça pagamento antes de confirmar a reserva no grupo.
+            Processamento de pagamentos seguro integrado com Mercado Pago.
           </p>
           <div className="mt-3 flex items-center justify-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-gold-500/40" />

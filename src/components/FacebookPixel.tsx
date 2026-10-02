@@ -60,7 +60,7 @@ export function trackWhatsAppClick() {
   if (typeof window !== "undefined" && window.fbq) {
     window.fbq("track", "Lead", {
       content_name: "WhatsApp Group Join",
-      content_category: "Leilão Legends",
+      content_category: "Rifa Legends",
     });
   }
 }

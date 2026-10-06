@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import Script from "next/script";
 
 declare global {
@@ -11,14 +10,6 @@ declare global {
 }
 
 export function FacebookPixel({ pixelId }: { pixelId: string }) {
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.fbq) {
-      window.fbq("init", pixelId);
-      window.fbq("track", "PageView");
-    }
-  }, [pixelId]);
-
   return (
     <>
       <Script
